@@ -198,10 +198,10 @@ class ACE2005Dataset(Corpus):
                 if len(line) == 0:
                     continue
                 jl = json.loads(line, encoding="utf-8")
-                for js in jl:
-                    ex = self.parse_sentence(js, fields)
-                    if ex is not None:
-                        examples.append(ex)
+                # for js in jl:
+                ex = self.parse_sentence(jl, fields)
+                if ex is not None:
+                    examples.append(ex)
 
         return examples
 
